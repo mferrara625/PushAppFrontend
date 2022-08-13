@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import Container from "../common/Container";
 import Splash from "../common/Splash";
-import RegSplash from "../../assets/regSplash.jpg";
+import ExProfileSplash from "../../assets/exProfileSplash.jpg";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHostUrl } from "../../config";
 import BorderCard from "../common/BorderCard";
@@ -12,6 +12,7 @@ import NavButton from "../NavBar/NavButton";
 import Exercise from "./Exercise";
 import RepForm from "./RepForm";
 import UpdateExerciseForm from "./UpdateExerciseForm";
+import Quote from "../Quotes/Quote";
 
 const ExerciseProfile = (props) => {
 
@@ -148,12 +149,13 @@ const ExerciseProfile = (props) => {
 
     return (
         <Container>
-            <Splash image={RegSplash} style={{
+            <Splash image={ExProfileSplash} style={{
                 height: "20vh",
                 color: "#F1F1F1",
-                textShadow: '1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000'
+                textShadow: '1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000',
+                backgroundPosition: 'inherit' 
             }}>
-                <h1>{exercise.name}</h1>
+                <Quote />
             </Splash>
             <Exercise exercise={data} />
 

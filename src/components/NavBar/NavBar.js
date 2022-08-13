@@ -40,6 +40,8 @@ const NavBar = (props) => {
             <NavButton to="/exercises" label='Exercises'/>
             <NavButton to="/addExercise" label='Add Exercise'/>
             <NavButton to="/workoutLog" label='Workout Log'/>
+            <NavButton to="/quote" label='Motivation'/>
+
 
 
 

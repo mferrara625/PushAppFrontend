@@ -11,6 +11,8 @@ import UpdateExercise from '../Exercise/UpdateExercise';
 import DeleteExercise from '../Exercise/DeleteExercise';
 import ViewCompletedExercises from '../Exercise/ViewCompletedExercises';
 import UpdateSets from '../Exercise/UpdateSets';
+import Quote from '../Quotes/Quote';
+import Test from '../Quotes/Test';
 
 const AppRouter = () => {
     return (
@@ -30,6 +32,10 @@ const AppRouter = () => {
             <Route path="/deleteExercise" element={<DeleteExercise />} />
             <Route path="/workoutLog" element={<ViewCompletedExercises />} />
             <Route path="/sets/:id" element={<UpdateSets />} />
+            <Route path="/quote" element={<Quote />} />
+            <Route path="/test" element={<Test />} />
+
+
 
 
 
