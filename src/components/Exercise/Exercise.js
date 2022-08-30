@@ -49,6 +49,8 @@ const Exercise = (props) => {
 
             {completed == true ?
                 <p>
+                    COMPLETED: {props.exercise.dateTime}
+                    <br/>
                     {displaySets()}
                 </p>
                 :
