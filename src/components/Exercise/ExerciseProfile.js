@@ -13,6 +13,7 @@ import Exercise from "./Exercise";
 import RepForm from "./RepForm";
 import UpdateExerciseForm from "./UpdateExerciseForm";
 import Quote from "../Quotes/Quote";
+import Timer from "../Timer/Timer";
 
 const ExerciseProfile = (props) => {
 
@@ -32,6 +33,11 @@ const ExerciseProfile = (props) => {
         sets: []
     })
     const [idArray, setIdArray] = useState([params.id])
+    const [resetTimer, setResetTimer] = useState(false);
+
+    const delay = ms => new Promise(
+        resolve => setTimeout(resolve, ms)
+      );
 
     const navigate = useNavigate();
 
@@ -74,6 +80,8 @@ const ExerciseProfile = (props) => {
     }
 
     const onSubmit = () => {
+       
+        setResetTimer(true);
 
         createSet(exerciseInfo);
         console.log("DATA.NAME TEST: " + data.name)
@@ -91,9 +99,7 @@ const ExerciseProfile = (props) => {
 
     }
 
-    const createSetStrings = () => {
-        
-    }
+    
 
     const addSetInfoToExercise =  async () => {
         // const data = (setInfo.map(set=>{
@@ -144,7 +150,18 @@ const ExerciseProfile = (props) => {
             }
         }
         fetchData();
-    }, []);
+        if(resetTimer){
+
+            console.log("TIMER WAS RESET");
+            async function resetResetTimer(){
+                await delay(1000)
+                setResetTimer(false);
+                }
+                resetResetTimer();
+            
+
+        }
+    }, [resetTimer]);
 
 
     return (
@@ -158,6 +175,8 @@ const ExerciseProfile = (props) => {
                 <Quote />
             </Splash>
             <Exercise exercise={data} />
+
+            <Timer activateReset={resetTimer}/>
 
 
             <UpdateExerciseForm exerciseInfo={exerciseInfo} onChange={updateForm} onSubmit={onSubmit}></UpdateExerciseForm>
@@ -176,7 +195,7 @@ const ExerciseProfile = (props) => {
 
             </Container>
 
-            <Button onClick={addSetInfoToExercise}>Test</Button>
+            <Button onClick={addSetInfoToExercise}>Complete</Button>
 
 
         </Container>

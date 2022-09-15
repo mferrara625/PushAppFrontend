@@ -42,7 +42,7 @@ const Exercise = (props) => {
     return (
         <div style={{ display: 'initial' }}>
 
-            <BorderCard onClick={onSelect} style={{ flexDirection: "column", alignItems: "center", textAlign: 'center' }}>
+            <BorderCard onClick={onSelect} style={{minWidth: 150, flexDirection: "column", alignItems: "center", textAlign: 'center' }}>
                 <h2>{name}</h2>
 
             </BorderCard>
