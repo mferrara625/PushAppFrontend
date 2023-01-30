@@ -1,25 +1,16 @@
 import React from 'react';
 import BorderCard from "../common/BorderCard";
-import Container from '../common/Container';
-import Form from '../common/Form';
-import { useState } from 'react';
-import InlineInputContainer from '../common/InlineInputContainer';
-import Input from '../common/Input';
-import NavButton from '../NavBar/NavButton';
 import { Link, useNavigate } from 'react-router-dom';
 import ExerciseSet from './ExerciseSet';
 
 const Exercise = (props) => {
-    const { id, name, onSubmit, sets, displayButtons, completed } = props.exercise;
+    const { id, name, sets, displayButtons, completed } = props.exercise;
 
     const navigate = useNavigate();
 
 
     console.log(props.exercise);
 
-    const handleChange = (e) => {
-        props.onChange(e.target.id, e.target.value);
-    }
 
     const onSelect = () => {
         props.onSelect(id);

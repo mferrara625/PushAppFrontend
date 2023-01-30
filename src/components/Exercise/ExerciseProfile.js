@@ -5,12 +5,9 @@ import Splash from "../common/Splash";
 import ExProfileSplash from "../../assets/exProfileSplash.jpg";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHostUrl } from "../../config";
-import BorderCard from "../common/BorderCard";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import Button from "../common/Button";
-import NavButton from "../NavBar/NavButton";
 import Exercise from "./Exercise";
-import RepForm from "./RepForm";
 import UpdateExerciseForm from "./UpdateExerciseForm";
 import Quote from "../Quotes/Quote";
 import Timer from "../Timer/Timer";
@@ -26,11 +23,6 @@ const ExerciseProfile = (props) => {
     const [exerciseInfo, setExerciseInfo] = useState({
         weight: null,
         reps: null
-    })
-    const [setString, setSetString] = useState([]);
-    const [exerciseObject, setExerciseObject] = useState({
-        name: "",
-        sets: []
     })
     const [idArray, setIdArray] = useState([params.id])
     const [resetTimer, setResetTimer] = useState(false);
@@ -49,18 +41,7 @@ const ExerciseProfile = (props) => {
         })
     }
 
-    const convertSetInfo = () => {
-        console.log(setInfo)
-        let tempArray = []
-        setInfo.map((set, index) => {
-            createSet(set);
-        })
-        // setSetString([tempArray]);
-        // console.log("did set string work: " + setString);
-        // createExerciseObject();
-        console.log("TEST SET CREATION WITH LIST");
-        addSetInfoToExercise(idArray);
-    }
+   
 
     const createSet = async (data) => {
 
@@ -92,12 +73,6 @@ const ExerciseProfile = (props) => {
 
     }
 
-    const createExerciseObject = () => {
-        setExerciseObject({name: data.name, sets: setInfo});
-        addSetInfoToExercise();
-
-
-    }
 
     
 
@@ -142,8 +117,6 @@ const ExerciseProfile = (props) => {
                     }
                 });
                 setData(response);
-                console.log("res" + data.id);
-                console.log("NAMETESTTT:"+ response.name)
 
             } catch (error) {
                 console.error(error.message);

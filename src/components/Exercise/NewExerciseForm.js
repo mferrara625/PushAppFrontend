@@ -6,7 +6,6 @@ import Input from '../common/Input';
 import Button from '../common/Button';
 
 const NewExerciseForm = ({onSubmit, onChange, exercise}) => {
-  // const {onSubmit, onChange, newUser} = props
 
   const handleChange = (e) => {
     onChange(e.target.id, e.target.value);

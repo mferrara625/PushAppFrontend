@@ -6,7 +6,6 @@ import Input from '../common/Input';
 import Button from '../common/Button';
 
 const UpdateExerciseForm = ({onSubmit, onChange, exerciseInfo}) => {
-  // const {onSubmit, onChange, newUser} = props
   
 
   const handleChange = (e) => {

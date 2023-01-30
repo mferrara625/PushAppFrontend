@@ -5,10 +5,8 @@ import Splash from "../common/Splash";
 import RegSplash from "../../assets/regSplash.jpg";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHostUrl } from "../../config";
-import BorderCard from "../common/BorderCard";
 import { useNavigate } from "react-router-dom";
 import Exercise from "./Exercise";
-import UpdateExerciseForm from "./UpdateExerciseForm";
 
 const ViewCompletedExercises = (props) => {
 

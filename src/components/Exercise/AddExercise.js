@@ -4,7 +4,6 @@ import Splash from "../common/Splash";
 import addExerciseSplash from "../../assets/addExerciseSplash.jpg";
 import axios from "axios";
 import { apiHostUrl } from "../../config";
-import NewExerciseForm from "./NewExerciseForm";
 import { AuthContext } from "../Providers/AuthProvider";
 import SimpleNewExerciseForm from "./SimpleNewExerciseForm";
 
